@@ -111,10 +111,14 @@
   color: #4e75ff;
 }
 
-.loader-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
 }
 
 .loader {
@@ -126,6 +130,22 @@
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 20px auto;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
 }
 
 @keyframes spin {
